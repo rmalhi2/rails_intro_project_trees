@@ -4,6 +4,11 @@
 
 <div class="container">
   <h1 class="mt-5 mb-4">Trees in Winnipeg</h1>
+  <style>
+    .custom-link {
+      color: black;
+    }
+  </style>
   <div class="row">
     <div class="col">
       <table class="table">
@@ -17,7 +22,7 @@
         <tbody>
           <% @trees.each do |tree| %>
             <tr>
-              <td><%= link_to tree.botanical_name, tree_path(tree) %></td>
+              <td><%= link_to tree.botanical_name, tree_path(tree), class: "custom-link" %></td>
               <td><%= tree.common_name %></td>
               <td><%= tree.location_class %></td>
             </tr>
