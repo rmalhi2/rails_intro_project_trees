@@ -1,0 +1,35 @@
+<%# <h1>Trees#index</h1>
+<p>Find me in app/views/trees/index.html.erb</p> %>
+
+
+<div class="container">
+  <h1 class="mt-5 mb-4">List of Trees</h1>
+  <div class="row">
+    <div class="col">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Botanical Name</th>
+            <th>Common Name</th>
+            <th>Diameter at Breast Height</th>
+            <th>Location Class</th>
+            <th>Park</th>
+            <th>Neighbourhood</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @trees.each do |tree| %>
+            <tr>
+              <td><%= tree.botanical_name %></td>
+              <td><%= tree.common_name %></td>
+              <td><%= tree.diameter_at_breast_height %></td>
+              <td><%= tree.location_class %></td>
+              <td><%= tree.park.park_name %></td>
+              <td><%= tree.neighbourhood.neighbourhood_name %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

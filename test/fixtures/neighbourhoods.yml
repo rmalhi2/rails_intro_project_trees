@@ -1,0 +1,7 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  neighbourhood_name: MyString
+
+two:
+  neighbourhood_name: MyString

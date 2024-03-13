@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  botanical_name: MyString
+  common_name: MyString
+  diameter_at_breast_height: 9.99
+  location_class: MyString
+  park: one
+  neighbourhood: one
+
+two:
+  botanical_name: MyString
+  common_name: MyString
+  diameter_at_breast_height: 9.99
+  location_class: MyString
+  park: two
+  neighbourhood: two
