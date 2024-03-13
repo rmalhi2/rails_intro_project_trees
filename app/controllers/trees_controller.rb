@@ -4,5 +4,6 @@ class TreesController < ApplicationController
   end
 
   def show
+    @tree = Tree.find(params[:id])
   end
 end

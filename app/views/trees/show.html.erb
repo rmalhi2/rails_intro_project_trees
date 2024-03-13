@@ -1,2 +1,14 @@
-<h1>Trees#show</h1>
-<p>Find me in app/views/trees/show.html.erb</p>
+<%# <h1>Trees#show</h1>
+<p>Find me in app/views/trees/show.html.erb</p> %>
+
+
+<div class="container">
+  <h1>Tree Details</h1>
+  <p><strong>Botanical Name:</strong> <%= @tree.botanical_name %></p>
+  <p><strong>Common Name:</strong> <%= @tree.common_name %></p>
+  <p><strong>Diameter at Breast Height:</strong> <%= @tree.diameter_at_breast_height %></p>
+  <p><strong>Location Class:</strong> <%= @tree.location_class %></p>
+  <p><strong>Park:</strong> <%= @tree.park.park_name %></p>
+  <p><strong>Neighbourhood:</strong> <%= @tree.neighbourhood.neighbourhood_name %></p>
+  <%= link_to "Back to Tree List", trees_path, class: "btn btn-primary" %>
+</div>
