@@ -8,7 +8,10 @@
   <p><strong>Common Name:</strong> <%= @tree.common_name %></p>
   <p><strong>Diameter at Breast Height:</strong> <%= @tree.diameter_at_breast_height %></p>
   <p><strong>Location Class:</strong> <%= @tree.location_class %></p>
-  <p><strong>Park:</strong> <%= @tree.park.park_name %></p>
+  <% if @tree.location_class == 'Park' %>
+    <p><strong>Park:</strong> <%= @tree.park.park_name %></p>
+  <% end %>
   <p><strong>Neighbourhood:</strong> <%= @tree.neighbourhood.neighbourhood_name %></p>
+  
   <%= link_to "Back", :back , class: "btn btn-primary" %>
 </div>
