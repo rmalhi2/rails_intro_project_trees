@@ -1,15 +1,28 @@
 <%# <h1>Trees#show</h1>
 <p>Find me in app/views/trees/show.html.erb</p> %>
-
+<style>
+  .custom-breadcrumb {
+    background-color: transparent;
+  }
+</style>
 
 <div class="container">
   <h1>Tree Details</h1>
+
+  <nav aria-label="breadcrumb" class="custom-breadcrumb">
+    <ol class="breadcrumb custom-breadcrumb">
+        <li class="breadcrumb-item"><a href="/trees">Trees</a></li>
+        <li class="breadcrumb-item active" aria-current="page" ><%= @tree.common_name %></li>
+    </ol>
+  </nav>
+
+
   <p><strong>Botanical Name:</strong> <%= @tree.botanical_name %></p>
   <p><strong>Common Name:</strong> <%= @tree.common_name %></p>
   <p><strong>Diameter at Breast Height:</strong> <%= @tree.diameter_at_breast_height %></p>
   <p><strong>Location Class:</strong> <%= @tree.location_class %></p>
   <% if @tree.location_class == 'Park' %>
-    <p><strong>Park:</strong> <%= link_to @tree.park.park_name, park_path(@tree.park) %></p>
+    <p><strong>Park:</strong>  <%= link_to @tree.park.park_name, park_path(@tree.park) %></p>
   <% end %>
   <p><strong>Neighbourhood:</strong> <%= @tree.neighbourhood.neighbourhood_name %></p>
   
