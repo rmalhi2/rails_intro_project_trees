@@ -32,17 +32,22 @@
   </div>
   <div class="row">
     <div class="col-md-12">
-      <nav aria-label="Page navigation example" class="Page">
-        <ul class="pagination justify-content-center">
-          <li class="page-item"><a class="page-link" href="?page=1">1</a></li>
-          <li class="page-item"><a class="page-link" href="?page=2">2</a></li>
-          <li class="page-item"><a class="page-link" href="?page=3">3</a></li>
-          <li class="page-item"><a class="page-link" href="?page=4">4</a></li>
-          <li class="page-item"><a class="page-link" href="?page=5">5</a></li>
-          <li class="page-item"><a class="page-link" href="?page=6">6</a></li>
-          <li class="page-item"><a class="page-link" href="?page=7">7</a></li>
-        </ul>
-      </nav>
+      <%# Pagination links with preserved search parameters %>
+        <%# Pagination links with preserved search parameters %>
+        <nav aria-label="Page navigation example" class="Page">
+            <ul class="pagination justify-content-center">
+                <%# Loop through the paginated pages in the current viewable range %>
+                <% (1..[@trees.total_pages, 7].min).each do |page| %>
+                <%# Build the URL for each page with preserved search parameters %>
+                <% url = trees_path(page: page, search: params[:search]) %>
+                <li class="page-item <%= 'active' if page == @trees.current_page %>">
+                    <%= link_to page, url, class: "page-link" %>
+                </li>
+                <% end %>
+            </ul>
+        </nav>
+
+
     </div>
   </div>
 </div>
