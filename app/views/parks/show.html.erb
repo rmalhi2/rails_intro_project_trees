@@ -1,2 +1,27 @@
-<h1>Parks#show</h1>
-<p>Find me in app/views/parks/show.html.erb</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Park Details</title>
+  <style>
+    .custom-link {
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Park Details</h1>
+    <p><strong>Park Name:</strong> <%= @park.park_name %></p>
+    <p><strong>Trees:</strong></p>
+    <ul>
+      <% @park.trees.each do |tree| %>
+        <li><%= link_to tree.common_name, tree_path(tree), class: "custom-link" %></li>
+      <% end %>
+    </ul>
+
+    <%= link_to "Back", :back , class: "btn btn-primary" %>
+  </div>
+</body>
+</html>

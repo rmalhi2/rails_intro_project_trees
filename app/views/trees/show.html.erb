@@ -9,7 +9,7 @@
   <p><strong>Diameter at Breast Height:</strong> <%= @tree.diameter_at_breast_height %></p>
   <p><strong>Location Class:</strong> <%= @tree.location_class %></p>
   <% if @tree.location_class == 'Park' %>
-    <p><strong>Park:</strong> <%= @tree.park.park_name %></p>
+    <p><strong>Park:</strong> <%= link_to @tree.park.park_name, park_path(@tree.park) %></p>
   <% end %>
   <p><strong>Neighbourhood:</strong> <%= @tree.neighbourhood.neighbourhood_name %></p>
   
