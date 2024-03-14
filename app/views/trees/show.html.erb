@@ -25,6 +25,43 @@
     <p><strong>Park:</strong>  <%= link_to @tree.park.park_name, park_path(@tree.park) %></p>
   <% end %>
   <p><strong>Neighbourhood:</strong> <%= @tree.neighbourhood.neighbourhood_name %></p>
+
+  <!-- mapping -->
+<div id="tree-map" style="height: 400px;"></div>
+
+<script>
+  function initTreeMap() {
+    var latitude = '<%= @tree.location.latitude %>';
+    var longitude = '<%= @tree.location.longitude %>';
+
+    // Check if latitude and longitude are valid
+    if (latitude && longitude) {
+      var treeLocation = { 
+        lat: parseFloat(latitude), 
+        lng: parseFloat(longitude) 
+      };
+      
+      var map = new google.maps.Map(document.getElementById('tree-map'), {
+        zoom: 12,
+        center: treeLocation
+      });
+      
+      var marker = new google.maps.Marker({
+        position: treeLocation,
+        map: map,
+        title: '<%= @tree.common_name %>'
+      });
+    }
+  }
+
+  // Callback function to initialize map after page load
+  window.onload = function() {
+    initTreeMap();
+  };
+</script>
+
+
+
   
   <%= link_to "Back", :back , class: "btn btn-primary" %>
 </div>
