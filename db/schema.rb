@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_14_134351) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_14_142746) do
   create_table "locations", force: :cascade do |t|
     t.decimal "latitude"
     t.decimal "longitude"
@@ -41,7 +41,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_14_134351) do
     t.integer "neighbourhood_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "image_src"
+    # t.string "image_src"
     t.index ["neighbourhood_id"], name: "index_trees_on_neighbourhood_id"
     t.index ["park_id"], name: "index_trees_on_park_id"
   end

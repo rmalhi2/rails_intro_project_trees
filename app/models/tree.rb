@@ -5,7 +5,7 @@ class Tree < ApplicationRecord
 
   validates :botanical_name, presence: true
   validates :common_name, presence: true
-  validates :diameter_at_breast_height, presence: true, numericality: { greater_than: 0 }
+  validates :diameter_at_breast_height, numericality: { greater_than: 0 }
   validates :location_class, presence: true
 end
 
