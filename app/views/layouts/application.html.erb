@@ -25,8 +25,11 @@
 
       <%= form_with(url: trees_path, method: :get, class: "form-inline mb-4") do %>
         <%= text_field_tag(:search, params[:search], class: "form-control mr-sm-2", placeholder: "Try searching Oak") %>
+        <%= select_tag(:park_id, options_from_collection_for_select(@parks, :id, :park_name, params[:park_id]), { include_blank: "All Parks", class: "form-control mr-sm-2" }) %>
         <%= submit_tag("Search", class: "btn btn-outline-success my-2 my-sm-0") %>
       <% end %>
+      
+
 
 
       <!-- Navigation links -->
